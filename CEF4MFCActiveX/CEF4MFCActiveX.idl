@@ -1,0 +1,51 @@
+// CEF4MFCActiveX.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (CEF4MFCActiveX.tlb) that will become a resource in
+// CEF4MFCActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(0c936bc9-3bb7-40e3-8f5a-a1839975919f), version(1.0),
+  control ]
+library CEF4MFCActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CCEF4MFCActiveXCtrl
+	[ 
+		uuid(9fc885b0-e831-4b50-bc24-77286f6bb82d)
+	]
+	dispinterface _DCEF4MFCActiveX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CCEF4MFCActiveXCtrl
+
+	[ 
+		uuid(2699867b-2961-4cca-922d-8e4064a02773)
+	]
+	dispinterface _DCEF4MFCActiveXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CCEF4MFCActiveXCtrl
+	[
+		uuid(c7304470-d1af-4ef1-95aa-4c813487eebb)
+	]
+	coclass CEF4MFCActiveX
+	{
+		[default] dispinterface _DCEF4MFCActiveX;
+		[default, source] dispinterface _DCEF4MFCActiveXEvents;
+	};
+
+};
